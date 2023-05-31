@@ -76,7 +76,15 @@ export default function VisitScreen() {
     shop.latitude,
     shop.longitude
   ).toFixed(2);
+  return (
+    <ScrollView style={{ marginTop: 10 }}>
 
+      {NewShops.map((shop, key) => {
+        return <Shops shop={shop} unique={key} />
+
+      })}
+    </ScrollView>
+  )
 
 
 
@@ -90,12 +98,4 @@ export default function VisitScreen() {
 
 
 
-return (
-  <ScrollView style={{ marginTop: 10 }}>
 
-    {NewShops.map((shop, key) => {
-      return <Shops shop={shop} unique={key} />
-
-    })}
-  </ScrollView>
-)
